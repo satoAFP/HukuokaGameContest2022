@@ -17,12 +17,11 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        movedir.y = Input.GetAxis("Vertical") * -5.0f;
+        movedir.x = Input.GetAxis("Horizontal") * 5.0f;
+
         if (controller.isGrounded)
         {
-
-            movedir.y = Input.GetAxis("Vertical") * -5.0f;
-            movedir.x = Input.GetAxis("Horizontal") * 5.0f;
-
             if (Input.GetButton("Jump"))
             {
                 movedir.z = 10f;
